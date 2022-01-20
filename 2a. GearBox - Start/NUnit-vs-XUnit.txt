@@ -1,0 +1,25 @@
+-----------------------------------------------------------------------------------------------------------------------------------
+| DESCRIPTION                                              | NUNIT                 | MSTEST               | XUNIT                 |
+| 1. Marks a test method/individual test                   | [Test]                | [TestMethod]         | [Fact]                |
+| 2. Indicates that a class has a group of unit tests      | [TestFixture]	       | [TestClass]          | N.A                   |
+| 3. Contains the initialization code,                     |                       |                      |                       |
+|    which is triggered before every test case	           | [SetUp]	             | [TestInitialize]     | Constructor           |
+| 4. Contains the cleanup code,                            |                       |                      |                       |
+|    which is triggered after every test case              | [TearDown]	           | [TestCleanup]	      | IDisposable.Dispose   |
+| 5. Contains method that is triggered                     |                       |                      |                       | 
+|    once before test cases start	                         | [OneTimeSetUp]	       | [ClassInitialize]    | IClassFixture<T>      |
+| 6. Contains method that is triggered                     |                       |                      |                       |
+|    once before test cases end	                           | [OneTimeTearDown]     | [ClassCleanup]	      | IClassFixture<T>      |
+| 7. Contains per-collection fixture                       |                       |                      |                       |
+|    setup and teardown	                                   | N.A	                 | N.A	                | ICollectionFixture<T> |
+| 8. Ignores a test case                                   | [Ignore(“reason”)]    | [Ignore]             | [Fact(Skip=”reason”)] |
+| 9. Categorize test cases or classes	                     | [Category()]          | [TestCategory(“)]    | [Trait(“Category”, “”)|
+| 10. Identifies a method that needs to be called          |                       |                      |                       |
+|     before executing any test in test class/test fixture | [TestFixtureSetup]    | [ClassInitialize]    | N.A                   |
+| 11. Identifies a method that needs to be called          |                       |                      |                       |
+|     after executing any test in test class/test fixture	 | [TestFixtureTearDown] |	[ClassCleanUp]	    | N.A                   |
+| 12. Identifies a method that needs to be called          |                       |                      |                       |
+|     before the execution of any tests in Test Assembly   | N.A                   | [AssemblyInitialize] | N.A                   |
+| 13. Identifies a method that needs to be called          |                       |                      |                       |
+|     after execution of tests in Test Assembly            | N.A                   | [AssemblyCleanUp]    | N.A                   |
+-----------------------------------------------------------------------------------------------------------------------------------
